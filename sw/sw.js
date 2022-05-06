@@ -10,6 +10,7 @@ this.addEventListener('install', (event) => {
 });
 
 this.addEventListener('activate', (event) => {
+  clients.claim();
   console.log('Активирован');
 });
 
