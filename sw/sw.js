@@ -6,11 +6,12 @@ const STATIC_CACHE_NAME = `s-${CACHE_NAME}`;
 const DYNAMIC_CACHE_NAME = `d-${CACHE_NAME}`;
 
 this.addEventListener('install', (event) => {
+  event.waitUntil(this.skipWaiting());
   console.log('Установлен');
 });
 
 this.addEventListener('activate', (event) => {
-  clients.claim();
+  event.waitUntil(this.clients.claim());
   console.log('Активирован');
 });
 
