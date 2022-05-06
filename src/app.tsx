@@ -3,6 +3,7 @@ import { startServiceWorker } from '../sw/start_sw';
 
 export const App = () => {
   const handleClick = () => {
+    console.log('click');
     navigator.serviceWorker.controller?.postMessage({
       type: 'app:click',
       data: 'hello',
